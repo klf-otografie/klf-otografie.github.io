@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+    <!-- BEGIN: Generic Meta Tags -->
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1" name="viewport"/>
+    <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
+    <meta content="index, follow, archive" name="robots"/>
+    <meta content="summary_large_image" name="twitter:card"/>
+    <meta content="website" property="og:type"/>
+    <meta content="de_DE" property="og:locale"/>
+    <meta content="KLF-otografie" property="og:site_name"/>
+    <link rel="icon" type="image/x-icon" href="assets/kay_icon.ico"/>
+    <link href="assets/styles.css" rel="stylesheet" type="text/css"/>
+
+    <meta content="Tierfotografie schweizweit zu fairen Preisen." name="description" id="meta-description"/>
+    <meta content="Tierfotografie schweizweit zu fairen Preisen." property="st:section" id="meta-section"/>
+    <meta content="Fotoshootings mit Tier und Mensch" name="twitter:title" id="meta-twitter-title"/>
+    <meta content="Tierfotografie schweizweit zu fairen Preisen." name="twitter:description" id="meta-twitter-description"/>
+    <meta content="index.html" property="og:url" id="meta-og-url"/>
+    <meta content="Fotoshootings mit Tier und Mensch" property="og:title" id="meta-og-title"/>
+    <meta content="Tierfotografie schweizweit zu fairen Preisen." property="og:description" id="meta-og-description"/>
+    <title>Fotoshootings mit Tier und Mensch - KLF-otografie</title>
+    <!-- END: Dynamic Meta Tags -->
+</head>
+<body>
+    <!-- BEGIN: Navigation Header -->
+    <header class="header">
+        <div class="header-background home"></div>
+        <nav class="navigation">
+            <div class="nav-content">
+                <input type="checkbox" id="menu-toggle" />
+                <label for="menu-toggle" class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </label>
+                <div class="logo">
+                    <a href="#" data-page="home">
+                        <img src="assets/main_image001.png" alt="KLF-otografie Logo">
+                    </a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#" data-page="home" id="nav-home">Home</a></li>
+                    <li><a href="#" data-page="portfolio" id="nav-portfolio">Portfolio</a></li>
+                    <li><a href="#" data-page="angebot" id="nav-angebot">Angebot</a></li>
+                    <li><a href="#" data-page="referenzen" id="nav-referenzen">Referenzen</a></li>
+                    <li><a href="#" data-page="kontakt" id="nav-kontakt">Kontakt</a></li>
+                    <li><a href="#" data-page="uber" id="nav-uber">Über mich</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <!-- END: Navigation Header -->
+
+    <div class="main-container">
+        <!-- Dynamic content will be loaded here -->
+        <main id="main-content">
+            <!-- Content will be dynamically inserted here -->
+        </main>
+
+        <!-- BEGIN: Footer -->
+        <footer>
+            <div class="footer-content">
+                <div class="social-media">
+                    <div class="fb-page" 
+                         data-href="https://facebook.com/klftierfotografie" 
+                         data-hide-cover="false" 
+                         data-show-facepile="false" 
+                         data-show-posts="false" 
+                         data-width="340">
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <a href="#" data-page="impressum" id="footer-impressum">Impressum</a> | 
+                    <a href="#" data-page="datenschutz" id="footer-privacy">Datenschutz</a> | 
+                    <a href="#" data-page="agb" id="footer-agb">AGB</a>
+                </div>
+                <div class="copyright">
+                    ©KLF-otografie.ch
+                </div>
+            </div>
+        </footer>
+        <!-- END: Footer -->
+    </div>
+
+    <!-- Modal Portfolio Popup -->
+    <div id="modalPortfolio" class="modal-portfolio" onclick="handleModalPortfolioClick(event)">
+        <div class="modal-portfolio-content">
+            <div class="modal-portfolio-header">
+                <span id="modalPortfolioCounter"></span>
+                <span class="modal-close" onclick="closeModalPortfolioGallery()">&times;</span>
+            </div>
+            <div class="modal-portfolio-gallery-container">
+                <div class="modal-portfolio-gallery-main">
+                    <button class="modal-portfolio-gallery-button modal-portfolio-prev-button" onclick="changeModalPortfolioSlide(-1)">❮</button>
+                    <img id="modalPortfolioMainImage" src="" alt="Modal portfolio image" onclick="event.stopPropagation()">
+                    <button class="modal-portfolio-gallery-button modal-portfolio-next-button" onclick="changeModalPortfolioSlide(1)">❯</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Facebook SDK -->
+    <div id="fb-root"></div>
+    <script async defer crossorigin="anonymous" 
+            src="https://connect.facebook.net/de_DE/sdk.js#xfbml=1&version=v18.0">
+    </script>
+
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+        //<![CDATA[
+        var _gaq = [];
+        
+        _gaq.push(['_gat._anonymizeIp']);
+        
+        if (window.CookieControl.isCookieAllowed("ga")) {
+            _gaq.push(['a._setAccount', 'UA-113793070-1'],
+                ['a._trackPageview']
+                );
+        
+            (function() {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = '../www.google-analytics.com/ga.js';
+        
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+        }
+        addAutomatedTracking('creator.website', track_anon);
+        //]]>
+    </script>
+
+    <script>
+        // Page content cache and metadata
+        const pageCache = new Map();
+        
+        // Page metadata
+        const pageMetadata = {
+            'home': {
+                title: 'Fotoshootings mit Tier und Mensch - KLF-otografie',
+                description: 'Tierfotografie schweizweit zu fairen Preisen.',
+                path: 'home/home.html'
+            },
+            'portfolio': {
+                title: 'Portfolio - KLF-otografie',
+                description: 'Entdecken Sie unsere Fotografie-Arbeiten.',
+                path: 'portfolio/portfolio.html'
+            },
+            'angebot': {
+                title: 'Angebot - KLF-otografie',
+                description: 'Unsere Fotografie-Dienstleistungen im Überblick.',
+                path: 'angebot/angebot.html'
+            },
+            'referenzen': {
+                title: 'Referenzen - KLF-otografie',
+                description: 'Was unsere Kunden über uns sagen.',
+                path: 'referenzen/referenzen.html'
+            },
+            'kontakt': {
+                title: 'Kontakt - KLF-otografie',
+                description: 'Kontaktieren Sie uns für Ihr individuelles Fotoshooting.',
+                path: 'kontakt/kontakt.html'
+            },
+            'impressum': {
+                title: 'Impressum - KLF-otografie',
+                description: 'Rechtliche Informationen zu KLF-otografie.',
+                path: 'impressum/impressum.html'
+            },
+            'datenschutz': {
+                title: 'Datenschutz - KLF-otografie',
+                description: 'Unsere Datenschutzrichtlinien.',
+                path: 'datenschutz/datenschutz.html'
+            },
+            'agb': {
+                title: 'AGB - KLF-otografie',
+                description: 'Unsere Allgemeinen Geschäftsbedingungen.',
+                path: 'agb/agb.html'
+            },
+            'uber': {
+                title: 'Über mich - KLF-otografie',
+                description: 'Lernen Sie mich kennen.',
+                path: 'uber/uber.html'
+            }
+        };
+
+        // Update meta tags and title
+        function updateMetaTags(metadata) {
+            document.title = metadata.title;
+            document.getElementById('meta-description').content = metadata.description;
+            document.getElementById('meta-section').content = metadata.description;
+            document.getElementById('meta-twitter-title').content = metadata.title;
+            document.getElementById('meta-twitter-description').content = metadata.description;
+            document.getElementById('meta-og-title').content = metadata.title;
+            document.getElementById('meta-og-description').content = metadata.description;
+            document.getElementById('meta-og-url').content = window.location.href;
+        }
+
+        // ------------------------------
+        // Portfolio Modal Gallery Code
+        // ------------------------------
+        const modalPortfolioGalleries = {};
+        let currentModalPortfolioGallery = null;
+
+        // Change slide for the modal popup
+        function changeModalPortfolioSlide(direction) {
+            if (!currentModalPortfolioGallery) return;
+            const gallery = modalPortfolioGalleries[currentModalPortfolioGallery];
+            gallery.currentSlide = (gallery.currentSlide + direction + gallery.images.length) % gallery.images.length;
+            updateModalPortfolioGallery();
+        }
+
+        // Update the modal popup gallery display
+        function updateModalPortfolioGallery() {
+            if (!currentModalPortfolioGallery) return;
+            const gallery = modalPortfolioGalleries[currentModalPortfolioGallery];
+            const mainImage = document.getElementById('modalPortfolioMainImage');
+            if (mainImage) {
+                mainImage.src = gallery.images[gallery.currentSlide];
+            }
+            // Update counter to show X/Y format
+            const counter = document.getElementById('modalPortfolioCounter');
+            if (counter) {
+                counter.textContent = `${gallery.currentSlide + 1}/${gallery.images.length}`;
+            }
+            // Show/hide navigation buttons based on number of images
+            const prevButton = document.querySelector('.modal-portfolio-prev-button');
+            const nextButton = document.querySelector('.modal-portfolio-next-button');
+            if (gallery.images.length <= 1) {
+                if (prevButton) prevButton.style.display = 'none';
+                if (nextButton) nextButton.style.display = 'none';
+            } else {
+                if (prevButton) prevButton.style.display = '';
+                if (nextButton) nextButton.style.display = '';
+            }
+        }
+
+        // Open the modal popup gallery
+        function openModalPortfolioGallery(galleryName, slideIndex) {
+            const modal = document.getElementById('modalPortfolio');
+            if (!modal) return;
+            
+            modal.style.display = 'block';
+            currentModalPortfolioGallery = galleryName;
+            
+            const galleryImages = Array.from(
+                document.querySelector(`#${galleryName}-block .gallery-row`).getElementsByTagName('img')
+            ).map(img => img.src);
+            
+            modalPortfolioGalleries[currentModalPortfolioGallery] = {
+                images: galleryImages,
+                currentSlide: slideIndex || 0
+            };
+            
+            updateModalPortfolioGallery();
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close the modal popup gallery
+        function closeModalPortfolioGallery() {
+            const modal = document.getElementById('modalPortfolio');
+            if (modal) {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto';
+            }
+        }
+
+        // Handle modal click events
+        function handleModalPortfolioClick(event) {
+            if (event.target.classList.contains('modal-portfolio') || 
+                event.target.classList.contains('modal-portfolio-content')) {
+                closeModalPortfolioGallery();
+            }
+            if (event.target.id === 'modalPortfolioMainImage' || 
+                event.target.classList.contains('modal-portfolio-gallery-button') ||
+                event.target.closest('.modal-portfolio-header')) {
+                event.stopPropagation();
+            }
+        }
+
+        // Listen for the escape key to close the modal popup
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModalPortfolioGallery();
+            }
+        });
+
+        // ------------------------------
+        // Page Navigation Code
+        // ------------------------------
+        async function loadPage(pageName) {
+            const metadata = pageMetadata[pageName];
+            if (!metadata) return;
+
+            try {
+                window.scrollTo(0, 0);
+                
+                let content;
+                if (pageCache.has(pageName)) {
+                    content = pageCache.get(pageName);
+                } else {
+                    const response = await fetch(metadata.path);
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    content = await response.text();
+                    pageCache.set(pageName, content);
+                }
+
+                document.getElementById('main-content').innerHTML = content;
+                updateMetaTags(metadata);
+                
+                // Update header background
+                const headerBackground = document.querySelector('.header-background');
+                headerBackground.className = 'header-background';
+                if (pageName !== 'home') {
+                    headerBackground.classList.add(pageName);
+                }
+                
+                history.pushState({ page: pageName }, metadata.title, `#${pageName}`);
+                
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.classList.toggle('active', link.getAttribute('data-page') === pageName);
+                });
+                
+                document.getElementById('menu-toggle').checked = false;
+
+                // Execute any scripts in the loaded content
+                const scripts = document.getElementById('main-content').getElementsByTagName('script');
+                for (let script of scripts) {
+                    eval(script.innerHTML);
+                }
+
+            } catch (error) {
+                console.error('Error loading page:', error);
+            }
+        }
+
+        // Handle navigation clicks
+        document.addEventListener('click', (e) => {
+            if (e.target.matches('[data-page]')) {
+                e.preventDefault();
+                const page = e.target.getAttribute('data-page');
+                loadPage(page);
+            }
+        });
+
+        // Handle browser back/forward
+        window.addEventListener('popstate', (e) => {
+            if (e.state && e.state.page) {
+                loadPage(e.state.page);
+            }
+        });
+
+        // Load initial page
+        document.addEventListener('DOMContentLoaded', () => {
+            const hash = window.location.hash.slice(1);
+            loadPage(hash || 'home');  // If hash is empty, load 'home'
+        });
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,68 @@
+<div class="inner-content">
+    <div class="home-gallery-container">
+        <div class="home-gallery-main">
+            <button class="home-gallery-button home-prev-button" onclick="changeHomeSlide(-1)">❮</button>
+            <img id="homeMainImage" src="home/assets/home_image002.jpg" alt="Main gallery image">
+            <button class="home-gallery-button home-next-button" onclick="changeHomeSlide(1)">❯</button>
+        </div>
+        <div class="home-gallery-thumbnails">
+            <img src="home/assets/home_image002.jpg" alt="Thumbnail 1" onclick="selectHomeImage(0)" class="home-thumbnail active">
+            <img src="home/assets/home_image003.jpg" alt="Thumbnail 2" onclick="selectHomeImage(1)" class="home-thumbnail">
+            <img src="home/assets/home_image004.jpg" alt="Thumbnail 3" onclick="selectHomeImage(2)" class="home-thumbnail">
+            <img src="home/assets/home_image005.jpg" alt="Thumbnail 4" onclick="selectHomeImage(3)" class="home-thumbnail">
+            <img src="home/assets/home_image006.jpg" alt="Thumbnail 5" onclick="selectHomeImage(4)" class="home-thumbnail">
+            <img src="home/assets/home_image007.jpg" alt="Thumbnail 6" onclick="selectHomeImage(5)" class="home-thumbnail">
+            <img src="home/assets/home_image008.jpg" alt="Thumbnail 7" onclick="selectHomeImage(6)" class="home-thumbnail">
+            <img src="home/assets/home_image009.jpg" alt="Thumbnail 8" onclick="selectHomeImage(7)" class="home-thumbnail">
+            <img src="home/assets/home_image010.jpg" alt="Thumbnail 9" onclick="selectHomeImage(8)" class="home-thumbnail">
+            <img src="home/assets/home_image011.jpg" alt="Thumbnail 10" onclick="selectHomeImage(9)" class="home-thumbnail">
+            <img src="home/assets/home_image012.jpg" alt="Thumbnail 11" onclick="selectHomeImage(10)" class="home-thumbnail">
+        </div>
+    </div>
+    <div class="contact-button-container">
+        <a href="#" data-page="kontakt">
+            <img src="home/assets/home_image013.png" alt="Contact Button" class="contact-button" data-page="kontakt">
+        </a>
+    </div>
+</div>
+
+<script>
+    // Wrap the gallery initialization in a function that can be called both on direct load and dynamic load
+    function initializeHomeGallery() {
+        window.homeCurrentSlide = 0;
+        window.homeImages = [
+            'home/assets/home_image002.jpg',
+            'home/assets/home_image003.jpg',
+            'home/assets/home_image004.jpg',
+            'home/assets/home_image005.jpg',
+            'home/assets/home_image006.jpg',
+            'home/assets/home_image007.jpg',
+            'home/assets/home_image008.jpg',
+            'home/assets/home_image009.jpg',
+            'home/assets/home_image010.jpg',
+            'home/assets/home_image011.jpg',
+            'home/assets/home_image012.jpg'
+        ];
+
+        window.changeHomeSlide = function(direction) {
+            window.homeCurrentSlide = (window.homeCurrentSlide + direction + window.homeImages.length) % window.homeImages.length;
+            updateHomeGallery();
+        };
+
+        window.selectHomeImage = function(index) {
+            window.homeCurrentSlide = index;
+            updateHomeGallery();
+        };
+
+        window.updateHomeGallery = function() {
+            document.getElementById('homeMainImage').src = window.homeImages[window.homeCurrentSlide];
+            const homeThumbnails = document.querySelectorAll('.home-thumbnail');
+            homeThumbnails.forEach((thumb, index) => {
+                thumb.classList.toggle('active', index === window.homeCurrentSlide);
+            });
+        };
+    }
+
+    // Initialize gallery immediately when script runs
+    initializeHomeGallery();
+</script>

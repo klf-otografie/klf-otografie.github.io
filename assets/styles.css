@@ -47,31 +47,31 @@ body {
 }
 
 .header-background {
-  background-image: url('../home/assets/home_background.jpg');
+  background-image: url('../home/assets/home_background.webp');
 }
 .header-background.portfolio {
-  background-image: url('../portfolio/assets/portfolio_background.jpg');
+  background-image: url('../portfolio/assets/portfolio_background.webp');
 }
 .header-background.angebot {
-  background-image: url('../angebot/assets/angebot_background.jpg');
+  background-image: url('../angebot/assets/angebot_background.webp');
 }
 .header-background.referenzen {
-  background-image: url('../referenzen/assets/referenzen_background.jpg');
+  background-image: url('../referenzen/assets/referenzen_background.webp');
 }
 .header-background.kontakt {
-  background-image: url('../kontakt/assets/kontakt_background.jpg');
+  background-image: url('../kontakt/assets/kontakt_background.webp');
 }
 .header-background.uber {
-  background-image: url('../uber/assets/uber_background.jpg');
+  background-image: url('../uber/assets/uber_background.webp');
 }
 .header-background.impressum {
-  background-image: url('../impressum/assets/impressum_background.jpg');
+  background-image: url('../impressum/assets/impressum_background.webp');
 }
 .header-background.datenschutz {
-  background-image: url('../datenschutz/assets/datenschutz_background.jpg');
+  background-image: url('../datenschutz/assets/datenschutz_background.webp');
 }
 .header-background.agb {
-  background-image: url('../agb/assets/agb_background.jpg');
+  background-image: url('../agb/assets/agb_background.webp');
 }
 
 .navigation {

@@ -2,26 +2,26 @@
     <div class="home-gallery-container">
         <div class="home-gallery-main">
             <button class="home-gallery-button home-prev-button" onclick="changeHomeSlide(-1)">❮</button>
-            <img id="homeMainImage" src="home/assets/home_image002.jpg" alt="Main gallery image">
+            <img id="homeMainImage" src="home/assets/home_image002.webp" alt="Main gallery image">
             <button class="home-gallery-button home-next-button" onclick="changeHomeSlide(1)">❯</button>
         </div>
         <div class="home-gallery-thumbnails">
-            <img src="home/assets/home_image002.jpg" alt="Thumbnail 1" onclick="selectHomeImage(0)" class="home-thumbnail active">
-            <img src="home/assets/home_image003.jpg" alt="Thumbnail 2" onclick="selectHomeImage(1)" class="home-thumbnail">
-            <img src="home/assets/home_image004.jpg" alt="Thumbnail 3" onclick="selectHomeImage(2)" class="home-thumbnail">
-            <img src="home/assets/home_image005.jpg" alt="Thumbnail 4" onclick="selectHomeImage(3)" class="home-thumbnail">
-            <img src="home/assets/home_image006.jpg" alt="Thumbnail 5" onclick="selectHomeImage(4)" class="home-thumbnail">
-            <img src="home/assets/home_image007.jpg" alt="Thumbnail 6" onclick="selectHomeImage(5)" class="home-thumbnail">
-            <img src="home/assets/home_image008.jpg" alt="Thumbnail 7" onclick="selectHomeImage(6)" class="home-thumbnail">
-            <img src="home/assets/home_image009.jpg" alt="Thumbnail 8" onclick="selectHomeImage(7)" class="home-thumbnail">
-            <img src="home/assets/home_image010.jpg" alt="Thumbnail 9" onclick="selectHomeImage(8)" class="home-thumbnail">
-            <img src="home/assets/home_image011.jpg" alt="Thumbnail 10" onclick="selectHomeImage(9)" class="home-thumbnail">
-            <img src="home/assets/home_image012.jpg" alt="Thumbnail 11" onclick="selectHomeImage(10)" class="home-thumbnail">
+            <img src="home/assets/home_image002.webp" alt="Thumbnail 1" onclick="selectHomeImage(0)" class="home-thumbnail active">
+            <img src="home/assets/home_image003.webp" alt="Thumbnail 2" onclick="selectHomeImage(1)" class="home-thumbnail">
+            <img src="home/assets/home_image004.webp" alt="Thumbnail 3" onclick="selectHomeImage(2)" class="home-thumbnail">
+            <img src="home/assets/home_image005.webp" alt="Thumbnail 4" onclick="selectHomeImage(3)" class="home-thumbnail">
+            <img src="home/assets/home_image006.webp" alt="Thumbnail 5" onclick="selectHomeImage(4)" class="home-thumbnail">
+            <img src="home/assets/home_image007.webp" alt="Thumbnail 6" onclick="selectHomeImage(5)" class="home-thumbnail">
+            <img src="home/assets/home_image008.webp" alt="Thumbnail 7" onclick="selectHomeImage(6)" class="home-thumbnail">
+            <img src="home/assets/home_image009.webp" alt="Thumbnail 8" onclick="selectHomeImage(7)" class="home-thumbnail">
+            <img src="home/assets/home_image010.webp" alt="Thumbnail 9" onclick="selectHomeImage(8)" class="home-thumbnail">
+            <img src="home/assets/home_image011.webp" alt="Thumbnail 10" onclick="selectHomeImage(9)" class="home-thumbnail">
+            <img src="home/assets/home_image012.webp" alt="Thumbnail 11" onclick="selectHomeImage(10)" class="home-thumbnail">
         </div>
     </div>
     <div class="contact-button-container">
         <a href="#" data-page="kontakt">
-            <img src="home/assets/home_image013.png" alt="Contact Button" class="contact-button" data-page="kontakt">
+            <img src="home/assets/home_image013.webp" alt="Contact Button" class="contact-button" data-page="kontakt">
         </a>
     </div>
 </div>
@@ -31,17 +31,17 @@
     function initializeHomeGallery() {
         window.homeCurrentSlide = 0;
         window.homeImages = [
-            'home/assets/home_image002.jpg',
-            'home/assets/home_image003.jpg',
-            'home/assets/home_image004.jpg',
-            'home/assets/home_image005.jpg',
-            'home/assets/home_image006.jpg',
-            'home/assets/home_image007.jpg',
-            'home/assets/home_image008.jpg',
-            'home/assets/home_image009.jpg',
-            'home/assets/home_image010.jpg',
-            'home/assets/home_image011.jpg',
-            'home/assets/home_image012.jpg'
+            'home/assets/home_image002.webp',
+            'home/assets/home_image003.webp',
+            'home/assets/home_image004.webp',
+            'home/assets/home_image005.webp',
+            'home/assets/home_image006.webp',
+            'home/assets/home_image007.webp',
+            'home/assets/home_image008.webp',
+            'home/assets/home_image009.webp',
+            'home/assets/home_image010.webp',
+            'home/assets/home_image011.webp',
+            'home/assets/home_image012.webp'
         ];
 
         window.changeHomeSlide = function(direction) {

@@ -1213,6 +1213,11 @@ footer {
   padding: 0 1rem;
 }
 
+/* Specific style for referenzen portfolio container */
+.portfolio-container-referenzen {
+  margin-top: 0;
+}
+
 .gallery-block {
   margin-bottom: 15px;
 }

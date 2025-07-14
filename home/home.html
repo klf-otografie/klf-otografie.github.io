@@ -1,4 +1,4 @@
-<div class="inner-content">
+<html><head></head><body><div class="inner-content">
     <div class="home-gallery-container">
         <div class="home-gallery-main">
             <button class="home-gallery-button home-prev-button" onclick="changeHomeSlide(-1)">❮</button>
@@ -17,7 +17,7 @@
             <img src="home/assets/home_image010.webp" alt="Thumbnail 9" onclick="selectHomeImage(8)" class="home-thumbnail">
             <img src="home/assets/home_image011.webp" alt="Thumbnail 10" onclick="selectHomeImage(9)" class="home-thumbnail">
             <img src="home/assets/home_image012.webp" alt="Thumbnail 11" onclick="selectHomeImage(10)" class="home-thumbnail">
-        </div>
+        <img src="/home/assets/home_image013.webp" alt="Thumbnail 13" onclick="selectHomeImage(11)" class="home-thumbnail"></div>
     </div>
     <div class="contact-button-container">
         <a href="#" data-page="kontakt">
@@ -42,7 +42,9 @@
             'home/assets/home_image010.webp',
             'home/assets/home_image011.webp',
             'home/assets/home_image012.webp'
-        ];
+        ,
+'/home/assets/home_image013.webp'
+];
 
         window.changeHomeSlide = function(direction) {
             window.homeCurrentSlide = (window.homeCurrentSlide + direction + window.homeImages.length) % window.homeImages.length;
@@ -65,4 +67,4 @@
 
     // Initialize gallery immediately when script runs
     initializeHomeGallery();
-</script>
+</script></body></html>

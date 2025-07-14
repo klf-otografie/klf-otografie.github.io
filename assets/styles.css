@@ -618,6 +618,10 @@ footer {
   border-top: 1px solid rgba(9, 52, 62, 0.61);
 }
 
+.content-container-level1-turnierfotos {
+  width: 80%;
+}
+
 .content-container-level2 {
     margin: 3rem auto;
     padding: 2rem;
